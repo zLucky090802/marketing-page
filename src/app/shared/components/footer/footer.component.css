@@ -1,0 +1,140 @@
+.footer {
+    background-color: #0f172a; /* Slate 900 de Tailwind */
+    color: #94a3b8; /* Slate 400 */
+    padding: 60px 20px 30px;
+    border-top: 1px solid #1e293b;
+  }
+  
+  .footer-container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+  }
+  
+  /* Columna de Marca */
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .logo-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #0284c7;
+    border-radius: 50%;
+  }
+  
+  .footer-tagline {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 400px;
+  }
+  
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  
+  .social-link {
+    color: #94a3b8;
+    background-color: #1e293b;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  
+  .social-link:hover {
+    color: #ffffff;
+    background-color: #0284c7;
+    transform: translateY(-2px);
+  }
+  
+  /* Listas de Enlaces */
+  .footer-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #0284c7;
+  }
+  
+  /* Barra inferior */
+  .footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+  
+  @media (min-width: 576px) {
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+  
+  .footer-legal {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .footer-legal a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .footer-legal a:hover {
+    color: #94a3b8;
+  }
