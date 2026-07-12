@@ -1,7 +1,6 @@
 .services-section {
-    background: linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)),
-                url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1415') center/cover no-repeat;
-    padding: 80px 20px;
+    background-color: var(--bg-almendrado-claro);
+    padding: 100px 20px;
   }
   .services-container {
     max-width: 1200px;
@@ -17,7 +16,13 @@
     flex-direction: column;
     gap: 1rem;
   }
-  
+  .category-ghost-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--almendrado-suave) !important; /* Tono muy claro y limpio */
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+  }
   .services-tag {
     color: #a0a0a0;
     font-size: 0.85rem;
@@ -69,14 +74,10 @@
   }
   
   .service-card {
-    background-color: #1a1a1a;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    padding: 2.5rem;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #1c1612; /* Un marrón tierra ultra oscuro en vez de gris/negro puro */
+    border-radius: 16px;
+    padding: 40px;
+    color: #f7f3ee;
   }
   
   .service-card:hover {
@@ -114,12 +115,25 @@
     margin-top: auto; /* Empuja la lista al final de la tarjeta para alineación */
   }
   
+  .service-card h3 {
+    font-family: 'Poppins', sans-serif !important; /* Quitamos cualquier Serif */
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ffffff; /* Texto de la tarjeta legible */
+    margin-bottom: 16px;
+  }
+
   .service-card-list li {
     color: #e5e5e5;
     font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+  }
+  .service-card p {
+    font-size: 0.95rem;
+    color: #cfc2b6;
+    line-height: 1.6;
   }
   
   .service-card-list .bullet {

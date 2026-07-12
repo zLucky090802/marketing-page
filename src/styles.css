@@ -1,15 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif !important;
-  background-color: #faf8f5; /* Tono almendrado base muy claro */
-  color: #2e2520; /* Tierra profundo para textos legibles */
-  scroll-behavior: smooth;
+:root {
+  --bg-almendrado-claro: #faf7f2; /* Fondo general de la página */
+  --bg-almendrado-bloque: #f3ece3; /* Fondos alternos de secciones */
+  --tierra-profundo: #2b211a;      /* Títulos principales y textos fuertes */
+  --tierra-medio: #5c4d43;         /* Párrafos y descripciones */
+  --almendrado-suave: #d9cebf;     /* Para los subtítulos fantasma como el "01 / Marketing" */
+  --acento-calido: #b08d6d;        /* Botones y detalles de resalte */
 }
 
-section {
-  scroll-margin-top: 80px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+  background-color: var(--bg-almendrado-claro);
+  color: var(--tierra-medio);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif !important;
+  color: var(--tierra-profundo);
+  font-weight: 700;
 }

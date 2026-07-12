@@ -1,8 +1,19 @@
-.footer {
-    background-color: #0f172a; /* Slate 900 de Tailwind */
-    color: #94a3b8; /* Slate 400 */
+/* ==========================================
+   FORM CONTACT SECTION (Estilo Integrado)
+   ========================================== */
+   .clean-contact-section {
+    padding: 120px 20px;
+    background-color: var(--bg-almendrado-bloque); /* Fondo almendrado base */
+  }
+  
+  /* ==========================================
+     FOOTER COMPONENT (Adaptado a Tonos Tierra)
+     ========================================== */
+  .footer {
+    background-color: var(--bg-almendrado-claro); /* Sigue el flujo almendrado de la landing */
+    color: var(--tierra-medio);
     padding: 60px 20px 30px;
-    border-top: 1px solid #1e293b;
+    border-top: 1px solid var(--almendrado-suave);
   }
   
   .footer-container {
@@ -31,9 +42,10 @@
   }
   
   .footer-logo {
+    font-family: 'Poppins', sans-serif !important;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--tierra-profundo); /* Marrón café premium en vez de blanco */
     display: flex;
     align-items: center;
     gap: 8px;
@@ -42,7 +54,7 @@
   .logo-dot {
     width: 10px;
     height: 10px;
-    background-color: #0284c7;
+    background-color: var(--acento-calido); /* Punto almendrado de acento */
     border-radius: 50%;
   }
   
@@ -50,6 +62,7 @@
     font-size: 0.95rem;
     line-height: 1.6;
     max-width: 400px;
+    color: var(--tierra-medio);
   }
   
   .footer-socials {
@@ -59,8 +72,8 @@
   }
   
   .social-link {
-    color: #94a3b8;
-    background-color: #1e293b;
+    color: var(--tierra-medio);
+    background-color: var(--bg-almendrado-bloque);
     width: 38px;
     height: 38px;
     border-radius: 50%;
@@ -72,13 +85,14 @@
   
   .social-link:hover {
     color: #ffffff;
-    background-color: #0284c7;
+    background-color: var(--acento-calido);
     transform: translateY(-2px);
   }
   
   /* Listas de Enlaces */
   .footer-title {
-    color: #ffffff;
+    color: var(--tierra-profundo);
+    font-family: 'Poppins', sans-serif !important;
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 18px;
@@ -94,19 +108,19 @@
   }
   
   .footer-links a {
-    color: #94a3b8;
+    color: var(--tierra-medio);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.2s ease;
   }
   
   .footer-links a:hover {
-    color: #0284c7;
+    color: var(--acento-calido);
   }
   
   /* Barra inferior */
   .footer-bottom {
-    border-top: 1px solid #1e293b;
+    border-top: 1px solid var(--almendrado-suave);
     padding-top: 24px;
     display: flex;
     flex-direction: column;
@@ -130,11 +144,13 @@
   }
   
   .footer-legal a {
-    color: #64748b;
+    color: var(--tierra-medio);
+    opacity: 0.8;
     text-decoration: none;
     transition: color 0.2s;
   }
   
   .footer-legal a:hover {
-    color: #94a3b8;
+    color: var(--acento-calido);
+    opacity: 1;
   }
