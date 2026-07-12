@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
+import { Servicio } from '../../../../core/interfaces/service.interface';
 @Component({
   selector: 'app-our-services',
   imports: [CommonModule],

@@ -1,9 +1,8 @@
 .services-section {
-    padding: 8rem 2rem;
-    background-color: #121212;
-    color: #ffffff;
+    background: linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)),
+                url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1415') center/cover no-repeat;
+    padding: 80px 20px;
   }
-  
   .services-container {
     max-width: 1200px;
     margin: 0 auto;

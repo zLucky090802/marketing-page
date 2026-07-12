@@ -1,199 +1,164 @@
 .contact-section {
-    padding: 80px 20px;
+    padding: 100px 20px;
     background-color: #f8fafc;
   }
   
-  .contact-container {
-    max-width: 1140px;
+  /* Caja contenedora exterior estilo tarjeta flotante oscura */
+  .contact-container-dark {
+    max-width: 1100px;
     margin: 0 auto;
+    background-color: #0f1115; /* Fondo ultra oscuro idéntico a tu referencia */
+    border-radius: 24px;
+    padding: 60px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
   
-  .contact-grid {
+  .contact-grid-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 50px;
     align-items: center;
   }
   
   @media (min-width: 992px) {
-    .contact-grid {
-      grid-template-columns: 1fr 1.2fr;
+    .contact-grid-layout {
+      grid-template-columns: 1.1fr 0.9fr;
     }
   }
   
-  .contact-info {
-    padding-right: 20px;
+  /* Lado del Contenido e Información */
+  .contact-text-side {
+    color: #ffffff;
   }
   
-  .contact-tag {
-    display: inline-block;
-    background-color: #e0f2fe;
-    color: #0369a1;
-    padding: 6px 16px;
+  .badge-project {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  
-  .contact-title {
-    font-size: 2.5rem;
-    color: #0f172a;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-  
-  .contact-desc {
-    font-size: 1.1rem;
-    color: #475569;
-    line-height: 1.6;
-    margin-bottom: 30px;
-  }
-  
-  .contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .info-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .info-icon {
-    font-size: 1.2rem;
-  }
-  
-  .info-item p {
-    margin: 0;
-    color: #334155;
+    color: #facc15;
     font-weight: 500;
+    margin-bottom: 24px;
   }
   
-  /* Card del Formulario */
-  .contact-card {
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  }
-  
-  .form-group {
+  .main-contact-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.15;
     margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+  
+  .contact-subtitle-desc {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+  
+  .direct-channels-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-  }
-  
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr;
     gap: 20px;
   }
   
-  @media (min-width: 576px) {
-    .form-row {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
-  label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #334155;
-  }
-  
-  input, select, textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
+  .channel-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
     font-size: 1rem;
-    color: #0f172a;
-    background-color: #f8fafc;
-    font-family: inherit;
-    transition: all 0.2s ease;
-    box-sizing: border-box;
+    color: #e2e8f0;
   }
   
-  input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: #0284c7;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1);
-  }
-  
-  /* Botón Submit */
-  .btn-submit {
-    width: 100%;
-    padding: 14px;
-    background-color: #0284c7;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    margin-top: 10px;
-  }
-  
-  .btn-submit:hover:not(:disabled) {
-    background-color: #0369a1;
-  }
-  
-  .btn-submit:disabled {
-    background-color: #94a3b8;
-    cursor: not-allowed;
-  }
-  
-  /* Mensajes de Éxito */
-  .success-message {
-    text-align: center;
-    padding: 30px 10px;
-  }
-  
-  .success-icon {
-    width: 60px;
-    height: 60px;
-    background-color: #dcfce7;
-    color: #15803d;
-    font-size: 1.8rem;
-    font-weight: bold;
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #1f242e;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
   }
   
-  .success-message h3 {
-    font-size: 1.5rem;
+  /* Lado del Formulario (Tarjeta de Acento en Amarillo) */
+  .contact-form-card-gold {
+    background-color: #facc15; /* Fondo amarillo sólido de tu imagen */
+    padding: 40px;
+    border-radius: 20px;
     color: #0f172a;
-    margin-bottom: 10px;
   }
   
-  .success-message p {
-    color: #475569;
-    margin-bottom: 24px;
+  .input-field-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
   }
   
-  .btn-reset {
-    background: none;
-    border: 1px solid #cbd5e1;
-    padding: 10px 20px;
-    border-radius: 6px;
+  .input-field-block label {
+    font-size: 0.85rem;
     font-weight: 600;
-    color: #64748b;
-    cursor: pointer;
-    transition: all 0.2s;
+    color: #475569;
   }
   
-  .btn-reset:hover {
-    background-color: #f1f5f9;
-    color: #334155;
+  .input-field-block input,
+  .input-field-block select,
+  .input-field-block textarea {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4); /* Input translúcido estilizado */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    color: #0f172a;
+    box-sizing: border-box;
+  }
+  
+  .input-field-block input::placeholder,
+  .input-field-block textarea::placeholder {
+    color: #64748b;
+  }
+  
+  /* Botón de Envío Oscuro dentro de Tarjeta Clara */
+  .btn-submit-dark {
+    width: 100%;
+    background-color: #0f172a;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn-submit-dark:hover {
+    background-color: #1e293b;
+  }
+  
+  /* Estado de Éxito */
+  .success-inner-state {
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  .success-check-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #0f172a;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-weight: bold;
   }

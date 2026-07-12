@@ -1,13 +1,13 @@
 .hero-section {
-    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), 
+                url('https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1470') center/cover no-repeat;
+    padding: 160px 20px 100px;
+    color: #ffffff;
+    min-height: 80vh;
     display: flex;
     align-items: center;
-    background-color: #121212; /* Fondo oscuro principal */
-    padding: 8rem 2rem 4rem 2rem; /* Margen superior amplio para no quedar oculto por el navbar fixed */
-    overflow: hidden;
-    position: relative;
   }
-  
   /* Sutil efecto de luz de fondo para dar profundidad sin usar imágenes aún */
   .hero-section::before {
     content: '';

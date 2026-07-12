@@ -1,4 +1,4 @@
-interface Servicio {
+export interface Servicio {
     titulo: string;
     descripcion: string;
     caracteristicas: string[];
