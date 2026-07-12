@@ -1,0 +1,150 @@
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #121212; /* Fondo oscuro principal */
+    padding: 8rem 2rem 4rem 2rem; /* Margen superior amplio para no quedar oculto por el navbar fixed */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Sutil efecto de luz de fondo para dar profundidad sin usar imágenes aún */
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0) 70%);
+    pointer-events: none;
+  }
+  
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .hero-content {
+    max-width: 800px; /* Centra el contenido y evita líneas de texto demasiado largas */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  /* Badge superior */
+  .hero-badge {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a0a0a0;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  /* Título Principal */
+  .hero-title {
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+  
+  /* Degradado elegante usando tonos neutros (Gris claro a Blanco puro) */
+  .text-gradient {
+    background: linear-gradient(135deg, #ffffff 30%, #a0a0a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Subtítulo */
+  .hero-subtitle {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+    max-width: 680px;
+  }
+  
+  /* Contenedor de Botones */
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  /* Estilos de Botones Generales */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background-color: #ffffff;
+    color: #121212;
+    border: 1px solid #ffffff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #e5e5e5;
+    border-color: #e5e5e5;
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+  }
+  
+  /* --- RESPONSIVE MEDIA QUERIES --- */
+  @media (max-width: 768px) {
+    .hero-section {
+      padding-top: 7rem;
+      text-align: center;
+    }
+  
+    .hero-content {
+      align-items: center;
+    }
+  
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.05rem;
+    }
+  
+    .hero-actions {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  
+    .btn {
+      width: 100%; /* Botones en bloque completo para mejor área de toque en móviles */
+    }
+  }
