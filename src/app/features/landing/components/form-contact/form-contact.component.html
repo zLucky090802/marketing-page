@@ -1,1 +1,111 @@
-<p>form-contact works!</p>
+<section id="contacto" class="contact-section">
+    <div class="contact-container">
+      <div class="contact-grid">
+        
+        <!-- Información lateral -->
+        <div class="contact-info">
+          <span class="contact-tag">Contacto</span>
+          <h2 class="contact-title">¿Listo para transformar tu negocio?</h2>
+          <p class="contact-desc">
+            Cuéntanos sobre tus objetivos operativos y comerciales. Evaluaremos tu ecosistema actual sin costo alguno.
+          </p>
+          <div class="contact-details">
+            <div class="info-item">
+              <span class="info-icon">📍</span>
+              <p>Cartagena, Colombia — Cobertura Global</p>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">✉️</span>
+              <p>contacto&#64;agencia.com</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Formulario interactivo con Signals de forma nativa -->
+        <div class="contact-card">
+          <form (submit)="onSubmit($event)" *ngIf="!submitSuccess()">
+            
+            <!-- Nombre -->
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input 
+                type="text" 
+                id="nombre" 
+                name="nombre"
+                [ngModel]="contactModel().nombre"
+                (ngModelChange)="updateField('nombre', $event)"
+                placeholder="John Doe" 
+                required>
+            </div>
+  
+            <div class="form-row">
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email">Correo corporativo *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  [ngModel]="contactModel().email"
+                  (ngModelChange)="updateField('email', $event)"
+                  placeholder="john@empresa.com" 
+                  required>
+              </div>
+              
+              <!-- Empresa -->
+              <div class="form-group">
+                <label for="empresa">Empresa / Proyecto</label>
+                <input 
+                  type="text" 
+                  id="empresa" 
+                  name="empresa"
+                  [ngModel]="contactModel().empresa"
+                  (ngModelChange)="updateField('empresa', $event)"
+                  placeholder="Opcional">
+              </div>
+            </div>
+  
+            <!-- Selector de Servicio -->
+            <div class="form-group">
+              <label for="servicio">¿En qué área requieres apoyo?</label>
+              <select 
+                id="servicio" 
+                name="servicio"
+                [ngModel]="contactModel().servicio"
+                (ngModelChange)="updateField('servicio', $event)">
+                <option value="marketing">Marketing & Contenido Digital</option>
+                <option value="tech">Tecnología & Automatizaciones</option>
+                <option value="full">Ambas Soluciones (Ecosistema Completo)</option>
+              </select>
+            </div>
+  
+            <!-- Mensaje -->
+            <div class="form-group">
+              <label for="mensaje">Cuéntanos brevemente sobre tu negocio *</label>
+              <textarea 
+                id="mensaje" 
+                name="mensaje"
+                [ngModel]="contactModel().mensaje"
+                (ngModelChange)="updateField('mensaje', $event)"
+                rows="4" 
+                placeholder="Ej: Necesito automatizar la captura de clientes de Instagram a mi WhatsApp..." 
+                required></textarea>
+            </div>
+  
+            <button type="submit" class="btn-submit" [disabled]="isSubmitting()">
+              {{ isSubmitting() ? 'Enviando...' : 'Enviar Solicitud' }}
+            </button>
+          </form>
+  
+          <!-- Mensaje de éxito -->
+          <div class="success-message" *ngIf="submitSuccess()">
+            <div class="success-icon">✓</div>
+            <h3>¡Mensaje Recibido!</h3>
+            <p>Analizaremos tu caso y te contactaremos en menos de 24 horas hábiles.</p>
+            <button class="btn-reset" (click)="resetFormState()">Enviar otro mensaje</button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
