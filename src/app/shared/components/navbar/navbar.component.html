@@ -1,1 +1,37 @@
-<p>navbar works!</p>
+<nav class="navbar">
+    <div class="navbar-container">
+      <!-- Contenedor de Marca (Logo + Nombre provisional) -->
+      <div class="navbar-brand">
+        <div class="logo-placeholder">
+          <!-- Aquí irá tu isotipo/logo en formato SVG o PNG -->
+          <span>[LOGO]</span>
+        </div>
+        <span class="brand-name">[Nombre de la Agencia]</span>
+      </div>
+  
+      <!-- Menú Horizontal para Escritorio (Desktop) -->
+      <ul class="nav-menu-desktop">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+  
+      <!-- Botón Hamburguesa para Móvil -->
+      <button class="menu-toggle" (click)="toggleMenu()" [class.open]="isMobileMenuOpen" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  
+    <!-- Menú Vertical Desplegable para Móvil (Mobile Overlay) -->
+    <div class="nav-menu-mobile" [class.active]="isMobileMenuOpen">
+      <ul>
+        <li><a href="#inicio" (click)="closeMenu()">Inicio</a></li>
+        <li><a href="#servicios" (click)="closeMenu()">Servicios</a></li>
+        <li><a href="#proceso" (click)="closeMenu()">Proceso</a></li>
+        <li><a href="#contacto" (click)="closeMenu()">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
