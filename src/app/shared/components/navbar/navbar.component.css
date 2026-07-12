@@ -11,13 +11,13 @@
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: #ffffff !important; /* Blanco sólido obligatorio */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(46, 37, 32, 0.03); /* Sombra sutil con tono tierra */
     z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
+    justify-content: space-between; /* Empuja el logo a la izquierda y los links a la derecha */
+    padding: 0 5%; /* Espaciado dinámico en los extremos */
     box-sizing: border-box;
   }
   .navbar-container {
@@ -33,19 +33,25 @@
   .navbar-brand {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 10px;
   }
-  .navbar-links a {
-    color: #334155 !important; /* Enlaces legibles */
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 24px;
-    transition: color 0.2s ease;
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 32px; /* Separación elegante entre opciones */
   }
 
-  .navbar-links a:hover {
-    color: #0284c7 !important;
-  }
+  .navbar-links a {
+  color: #705e52 !important; /* Tono tierra medio */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+    color: #bc9676 !important; /* Acento almendrado cálido */
+}
 
   .navbar-brand .logo-placeholder {
     width: 36px;
@@ -161,9 +167,10 @@
   }
 
   .navbar-logo {
-    color: #0f172a !important; /* Texto oscuro para contraste */
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    color: #4a3b32 !important; /* Almendrado oscuro */
+    letter-spacing: -0.02em;
   }
   
   /* --- Responsive Media Query --- */

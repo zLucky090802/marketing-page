@@ -1,164 +1,167 @@
-.contact-section {
-    padding: 100px 20px;
-    background-color: #f8fafc;
+.clean-contact-section {
+    padding: 120px 20px;
+    background-color: #f5f1eb; /* Almendrado suave de fondo */
   }
   
-  /* Caja contenedora exterior estilo tarjeta flotante oscura */
-  .contact-container-dark {
-    max-width: 1100px;
+  .contact-alignment-container {
+    max-width: 1140px;
     margin: 0 auto;
-    background-color: #0f1115; /* Fondo ultra oscuro idéntico a tu referencia */
-    border-radius: 24px;
-    padding: 60px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  }
-  
-  .contact-grid-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 50px;
-    align-items: center;
+    gap: 60px;
+    align-items: start;
   }
   
   @media (min-width: 992px) {
-    .contact-grid-layout {
-      grid-template-columns: 1.1fr 0.9fr;
+    .contact-alignment-container {
+      grid-template-columns: 1fr 1fr; /* Alineación limpia lado a lado */
     }
   }
   
-  /* Lado del Contenido e Información */
-  .contact-text-side {
-    color: #ffffff;
+  /* Columna de Texto */
+  .contact-info-side {
+    padding-top: 10px;
   }
   
-  .badge-project {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid #e2e8f0;
-    padding: 6px 14px;
-    border-radius: 20px;
+  .agency-tag-accent {
     font-size: 0.85rem;
-    color: #facc15;
-    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #bc9676; /* Almendrado de acento */
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+  
+  .contact-main-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3b312a; /* Tierra oscuro */
+    line-height: 1.2;
     margin-bottom: 24px;
   }
   
-  .main-contact-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 20px;
-    letter-spacing: -0.02em;
-  }
-  
-  .contact-subtitle-desc {
-    color: #94a3b8;
+  .contact-pitch {
     font-size: 1.05rem;
+    color: #6e5d53;
     line-height: 1.6;
     margin-bottom: 40px;
   }
   
-  .direct-channels-list {
+  .minimal-channels {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-  }
-  
-  .channel-row {
-    display: flex;
-    align-items: center;
     gap: 16px;
-    font-size: 1rem;
-    color: #e2e8f0;
   }
   
-  .icon-circle {
-    width: 40px;
-    height: 40px;
-    background-color: #1f242e;
-    border-radius: 50%;
+  .channel-link-item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 12px;
   }
   
-  /* Lado del Formulario (Tarjeta de Acento en Amarillo) */
-  .contact-form-card-gold {
-    background-color: #facc15; /* Fondo amarillo sólido de tu imagen */
-    padding: 40px;
-    border-radius: 20px;
-    color: #0f172a;
+  .channel-bullet {
+    width: 6px;
+    height: 6px;
+    background-color: #bc9676;
+    border-radius: 50%;
   }
   
-  .input-field-block {
+  .channel-link-item p {
+    margin: 0;
+    font-weight: 500;
+    color: #3b312a;
+  }
+  
+  /* Columna del Formulario Integrado (Sin tarjetas encimadas) */
+  .contact-form-side {
+    width: 100%;
+  }
+  
+  .form-field-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .form-field-wrapper label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a3b32;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .form-field-wrapper input,
+  .form-field-wrapper select,
+  .form-field-wrapper textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #ffffff; /* Inputs limpios e higiénicos sobre el fondo almendrado */
+    border: 1px solid #dcd3c9;
+    border-radius: 4px; /* Bordes sutiles y profesionales */
+    font-size: 1rem;
+    color: #3b312a;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .form-field-wrapper input:focus,
+  .form-field-wrapper select:focus,
+  .form-field-wrapper textarea:focus {
+    outline: none;
+    border-color: #bc9676;
+    box-shadow: 0 0 0 3px rgba(188, 150, 118, 0.15);
+  }
+  
+  /* Botón Sólido de Tono Tierra */
+  .btn-earth-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: #3b312a; /* Botón robusto tierra */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-earth-submit:hover:not(:disabled) {
+    background-color: #52443a;
+  }
+  
+  .btn-earth-submit:disabled {
+    background-color: #c2b9b0;
+    cursor: not-allowed;
+  }
+  
+  /* Estado de éxito lineal */
+  .success-linear-state {
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .success-linear-state h3 {
+    color: #3b312a;
+    margin-bottom: 12px;
+  }
+  
+  .success-linear-state p {
+    color: #6e5d53;
     margin-bottom: 20px;
   }
   
-  .input-field-block label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #475569;
-  }
-  
-  .input-field-block input,
-  .input-field-block select,
-  .input-field-block textarea {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.4); /* Input translúcido estilizado */
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-    padding: 12px 16px;
-    font-size: 0.95rem;
-    color: #0f172a;
-    box-sizing: border-box;
-  }
-  
-  .input-field-block input::placeholder,
-  .input-field-block textarea::placeholder {
-    color: #64748b;
-  }
-  
-  /* Botón de Envío Oscuro dentro de Tarjeta Clara */
-  .btn-submit-dark {
-    width: 100%;
-    background-color: #0f172a;
-    color: #ffffff;
+  .btn-text-revert {
+    background: none;
     border: none;
-    border-radius: 12px;
-    padding: 14px;
-    font-size: 1rem;
+    color: #bc9676;
     font-weight: 600;
+    text-decoration: underline;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: background-color 0.2s ease;
-  }
-  
-  .btn-submit-dark:hover {
-    background-color: #1e293b;
-  }
-  
-  /* Estado de Éxito */
-  .success-inner-state {
-    text-align: center;
-    padding: 40px 0;
-  }
-  
-  .success-check-circle {
-    width: 50px;
-    height: 50px;
-    background-color: #0f172a;
-    color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
   }
