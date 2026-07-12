@@ -15,7 +15,6 @@ import { AboutUsComponent } from "./features/landing/components/about-us/about-u
     NavbarComponent,
     HeroComponent,
     OurServicesComponent,
-    CasesComponent,
     FormContactComponent,
     FooterComponent,
     AboutUsComponent
