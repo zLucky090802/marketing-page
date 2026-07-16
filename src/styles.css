@@ -1,29 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
+/* --- CONFIGURACIÓN GLOBAL DARK MINIMALIST --- */
 :root {
-  --bg-almendrado-claro: #faf7f2; /* Fondo general de la página */
-  --bg-almendrado-bloque: #f3ece3; /* Fondos alternos de secciones */
-  --tierra-profundo: #2b211a;      /* Títulos principales y textos fuertes */
-  --tierra-medio: #5c4d43;         /* Párrafos y descripciones */
-  --almendrado-suave: #d9cebf;     /* Para los subtítulos fantasma como el "01 / Marketing" */
-  --acento-calido: #b08d6d;        /* Botones y detalles de resalte */
+  --bg-color: #111111;       /* Negro Profundo */
+  --text-main: #FFFFFF;      /* Blanco Puro */
+  --accent-gold: #D4AF37;    /* Dorado de marca */
+  --font-heading: 'VT323', monospace;
+  --font-body: 'Inter', sans-serif;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif !important;
-  background-color: var(--bg-almendrado-claro);
-  color: var(--tierra-medio);
-  overflow-x: hidden;
+  background-color: var(--bg-color); /* Fondo negro para toda la app */
+  color: var(--text-main);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif !important;
-  color: var(--tierra-profundo);
-  font-weight: 700;
+/* Contenedor principal que envuelve todo */
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color);
 }

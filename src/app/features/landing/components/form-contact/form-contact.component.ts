@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 interface ContactData {
   nombre: string;
@@ -20,6 +21,7 @@ interface ContactData {
 export class FormContactComponent {
   isSubmitting = signal(false);
   submitSuccess = signal(false);
+  private http = inject(HttpClient);
 
   contactModel = signal<ContactData>({
     nombre: '',
@@ -36,11 +38,23 @@ export class FormContactComponent {
     const data = this.contactModel();
     console.log('Enviando Lead Calificado:', data);
 
+
     // Simulación de envío reactivo
     setTimeout(() => {
       this.isSubmitting.set(false);
-      this.submitSuccess.set(true);
       
+      this.http.post('https://formspree.io/f/meeyelpq', this.contactModel())
+      .subscribe({
+        next: (response) =>{
+          alert('¡Mensaje enviado con éxito!')
+          this.isSubmitting.set(false)
+          this.submitSuccess.set(true);
+        },
+        error: (err) =>{
+          alert('Hubo un error al enviar el mensaje.')
+          this.isSubmitting.set(false)
+        }
+      })
       // Reseteamos el modelo a su estado inicial
       this.contactModel.set({
         nombre: '',

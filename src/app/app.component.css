@@ -1,18 +1,11 @@
-/* Configuración base para una experiencia premium */
-html {
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: #ffffff;
-    color: #0f172a;
-    overflow-x: hidden;
-  }
-  
-  /* Espaciado compensatorio para el navbar fixed (evita que tape los títulos al hacer scroll) */
-  section {
-    scroll-margin-top: 80px; 
-  }
+/* 1. Fondo base de la página (necesitas algo detrás para que el vidrio "se note") */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  /* Un gradiente suave ayuda a que el efecto glass luzca */
+  background-color: #111111;
+  background-attachment: fixed;
+}
+
+/* 2. Clase global para tus contenedores (secciones, header, etc.) */

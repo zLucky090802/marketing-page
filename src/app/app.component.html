@@ -1,19 +1,15 @@
-<!-- Barra de navegación global (Shared) -->
-<app-navbar></app-navbar>
+<!-- El contenedor único que envuelve toda la estructura -->
+<div class="glass-panel main-container">
+  
+  <app-navbar></app-navbar>
 
-<main>
-  <!-- Propuesta de Valor / Primer Impacto -->
-  <app-hero></app-hero>
+  <main>
+    <app-hero></app-hero>
+    <app-about-us id="about"></app-about-us>
+    <app-our-services></app-our-services>
+    <app-form-contact></app-form-contact>
+  </main>
 
-  <!-- Quiénes Somos / El Equipo detras del proyecto -->
-  <app-about-us></app-about-us>
-
-  <!-- Catálogo de Soluciones y Especialidades -->
-  <app-our-services></app-our-services>
-
-  <!-- Captura de Leads Calificados (Formulario Seguro con Signals) -->
-  <app-form-contact></app-form-contact>
-</main>
-
-<!-- Pie de página e Información Legal (Shared) -->
-<app-footer></app-footer>
+  <app-footer></app-footer>
+  
+</div>

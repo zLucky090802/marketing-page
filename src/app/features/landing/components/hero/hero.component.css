@@ -1,150 +1,128 @@
-.hero-section {
-    position: relative;
-    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), 
-                url('https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1470') center/cover no-repeat;
-    padding: 160px 20px 100px;
-    color: #ffffff;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-  }
-  /* Sutil efecto de luz de fondo para dar profundidad sin usar imágenes aún */
-  .hero-section::before {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0) 70%);
-    pointer-events: none;
-  }
-  
-  .hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-  }
-  
-  .hero-content {
-    max-width: 800px; /* Centra el contenido y evita líneas de texto demasiado largas */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
-  
-  /* Badge superior */
-  .hero-badge {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #a0a0a0;
-    padding: 0.5rem 1rem;
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  
-  /* Título Principal */
-  .hero-title {
-    color: #ffffff;
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
-    margin: 0;
-  }
-  
-  /* Degradado elegante usando tonos neutros (Gris claro a Blanco puro) */
-  .text-gradient {
-    background: linear-gradient(135deg, #ffffff 30%, #a0a0a0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  /* Subtítulo */
-  .hero-subtitle {
-    color: #a0a0a0;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin: 0 0 1rem 0;
-    max-width: 680px;
-  }
-  
-  /* Contenedor de Botones */
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-  }
-  
-  /* Estilos de Botones Generales */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.85rem 2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    cursor: pointer;
-  }
-  
-  .btn-primary {
-    background-color: #ffffff;
-    color: #121212;
-    border: 1px solid #ffffff;
-  }
-  
-  .btn-primary:hover {
-    background-color: #e5e5e5;
-    border-color: #e5e5e5;
-    transform: translateY(-2px);
-  }
-  
-  .btn-secondary {
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
-  }
-  
-  /* --- RESPONSIVE MEDIA QUERIES --- */
-  @media (max-width: 768px) {
-    .hero-section {
-      padding-top: 7rem;
-      text-align: center;
-    }
-  
-    .hero-content {
-      align-items: center;
-    }
-  
-    .hero-title {
-      font-size: 2.5rem;
-    }
-  
-    .hero-subtitle {
-      font-size: 1.05rem;
-    }
-  
-    .hero-actions {
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-  
-    .btn {
-      width: 100%; /* Botones en bloque completo para mejor área de toque en móviles */
-    }
-  }
+/* --- CONFIGURACIÓN GLOBAL --- */
+html { 
+  scroll-behavior: smooth; 
+}
+
+/* --- VARIABLES DE COLOR --- */
+:root {
+  --color-bg: #111111;
+  --color-text: #F5F1EA;
+  --color-brand-red: #E81C17;
+}
+
+/* --- ESTILOS GENERALES Y TIPOGRAFÍA --- */
+p {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+/* --- NAVBAR (Alineado con Hero) --- */
+.navbar {
+  width: 100%;
+  height: 90px;
+  background-color: #FBFBFB !important;
+  display: flex;
+  justify-content: center;
+  padding: 0 8%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #1A1A1A;
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.logo img { width: 100px; display: block; }
+.nav-menu { display: flex; list-style: none; gap: 40px; }
+.nav-menu a { font-family: 'VT323', monospace; font-size: 1.5rem; color: #1A1A1A; text-decoration: none; text-transform: uppercase; }
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { text-decoration: none; font-weight: bold; color: #1A1A1A; font-family: 'Poppins', sans-serif; }
+.nav-links a:hover { color: #E81C17; border-bottom: 1px solid #E81C17; }
+
+/* --- HERO DARK STYLE --- */
+.hero-split {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+  padding-right: 8%;
+  background-image: url('/darkbackgroundimage.png');
+  background-size: cover;
+  background-position: center right; 
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
+
+.hero-split::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.container { position: relative; z-index: 1; width: 100%; max-width: 1200px; margin: 0; }
+.hero-content { flex: 1; max-width: 600px; text-align: left; }
+.pixel-font { font-family: 'VT323', monospace !important; text-transform: uppercase; font-size: 6rem !important; line-height: 0.9; color: #FFFFFF !important; margin-bottom: 30px; }
+.hero-subtitle { font-family: 'Poppins', sans-serif; font-size: 1.2rem; line-height: 1.4; color: #AAAAAA; margin-bottom: 40px; }
+
+/* --- FLECHA DE SCROLL (Corregida: Doble y Grande) --- */
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 3rem; /* Aumentado para que se vea bien */
+  color: #FFFFFF;
+  line-height: 0.5; /* Junta las dos flechas */
+  animation: bounce-soft 2s infinite;
+}
+
+@keyframes bounce-soft {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+  40% { transform: translateY(-15px) translateX(-50%); }
+  60% { transform: translateY(-7px) translateX(-50%); }
+}
+
+/* --- BOTÓN MINIMALISTA --- */
+.btn-primary {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 2px solid #E6392B;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover { background-color: #E6392B; color: #FFFFFF; border-color: #E6392B; }
+
+/* --- SECCIÓN ABOUT --- */
+.about-section { background: var(--color-bg); color: var(--color-text); padding: 100px 8%; font-family: 'Satoshi', sans-serif; }
+.about-block { margin-bottom: 80px; }
+.section-title { font-family: 'Space Grotesk', sans-serif; color: var(--color-brand-red); margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 2px; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .hero-split { padding: 40px 8%; text-align: center; }
+  .pixel-font { font-size: 3.5rem !important; }
+}

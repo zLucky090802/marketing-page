@@ -8,13 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  isMobileMenuOpen = false;
+  isMenuOpen: boolean = false;
 
+  // 2. Definimos la función que cambia el estado
   toggleMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
-
-  closeMenu(): void {
-    this.isMobileMenuOpen = false;
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

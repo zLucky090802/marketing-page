@@ -1,47 +1,32 @@
 <section id="servicios" class="services-section">
-    <div class="services-container">
-      
-      <div class="services-header">
-        <span class="services-tag">Nuestras Soluciones</span>
-        <h2 class="services-title">Soluciones integrales para la era digital</h2>
-        <p class="services-subtitle">Fusionamos el alcance del marketing moderno con la robustez de la tecnología a medida.</p>
-      </div>
+  <!-- Título con el estilo de marca -->
+  <h2 class="section-title-red">SERVICIOS PROFESIONALES</h2>
   
-      <!-- Bloque 1: Marketing -->
-      <div class="services-category-block">
-        <h3 class="category-title"><span>01 /</span> Marketing & Contenido</h3>
-        <div class="services-grid">
-          <div class="service-card" *ngFor="let item of marketingServices">
-            <div class="service-card-header">
-              <h4>{{ item.titulo }}</h4>
-            </div>
-            <p class="service-card-desc">{{ item.descripcion }}</p>
-            <ul class="service-card-list">
-              <li *ngFor="let feat of item.caracteristicas">
-                <span class="bullet">✦</span> {{ feat }}
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Bloque 2: Tecnología -->
-      <div class="services-category-block">
-        <h3 class="category-title"><span>02 /</span> Tecnología & Automatización</h3>
-        <div class="services-grid">
-          <div class="service-card highlighted" *ngFor="let item of techServices">
-            <div class="service-card-header">
-              <h4>{{ item.titulo }}</h4>
-            </div>
-            <p class="service-card-desc">{{ item.descripcion }}</p>
-            <ul class="service-card-list">
-              <li *ngFor="let feat of item.caracteristicas">
-                <span class="bullet">✦</span> {{ feat }}
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
+  <div class="services-grid">
+    <!-- Tarjeta 1 -->
+    <div class="service-card">
+      <span class="card-number">01</span>
+      <h3>Marketing & Contenido</h3>
+      <p>Diseño de planes editoriales y guiones estratégicos enfocados en algoritmos modernos. Creamos contenido pensado para capturar la atención en segundos.</p>
+      <ul class="service-list-dark">
+        <li>Investigación profunda de audiencias.</li>
+        <li>Desarrollo de guiones persuasivos.</li>
+        <li>Análisis de métricas de retención.</li>
+        <li>Estrategias de tráfico pago (Ads).</li>
+      </ul>
     </div>
-  </section>
+
+    <!-- Tarjeta 2 -->
+    <div class="service-card">
+      <span class="card-number">02</span>
+      <h3>Tecnología & Automatización</h3>
+      <p>Transformamos la infraestructura digital de tu negocio conectando tus canales de comunicación con flujos automatizados de alto impacto.</p>
+      <ul class="service-list-dark">
+        <li>Integración inteligente (Make/Zapier).</li>
+        <li>Chatbots de calificación de leads.</li>
+        <li>Landing pages SEO ultra-rápidas.</li>
+        <li>Arquitectura modular escalable.</li>
+      </ul>
+    </div>
+  </div>
+</section>

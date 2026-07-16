@@ -1,167 +1,142 @@
-.clean-contact-section {
-    padding: 120px 20px;
-    background-color: #f5f1eb; /* Almendrado suave de fondo */
-  }
-  
-  .contact-alignment-container {
-    max-width: 1140px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 60px;
-    align-items: start;
-  }
-  
-  @media (min-width: 992px) {
-    .contact-alignment-container {
-      grid-template-columns: 1fr 1fr; /* Alineación limpia lado a lado */
-    }
-  }
-  
-  /* Columna de Texto */
-  .contact-info-side {
-    padding-top: 10px;
-  }
-  
-  .agency-tag-accent {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #bc9676; /* Almendrado de acento */
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 16px;
-  }
-  
-  .contact-main-heading {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #3b312a; /* Tierra oscuro */
-    line-height: 1.2;
-    margin-bottom: 24px;
-  }
-  
-  .contact-pitch {
-    font-size: 1.05rem;
-    color: #6e5d53;
-    line-height: 1.6;
-    margin-bottom: 40px;
-  }
-  
-  .minimal-channels {
-    display: flex;
+/* --- SECCIÓN CONTACTO (DARK) --- */
+.services-section {
+  padding: 100px 8%;
+  background-color: #111111;
+  display: flex;
+  flex-direction: row; /* Alineación horizontal en desktop */
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- TEXTO IZQUIERDO --- */
+.service-content {
+  flex: 1;
+}
+
+.contact-main-heading {
+  font-family: 'VT323', monospace !important;
+  font-size: 3.5rem !important;
+  color: #FFFFFF !important;
+  margin-bottom: 25px !important;
+  line-height: 1 !important;
+  text-transform: uppercase;
+}
+
+.contact-pitch {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #AAAAAA;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.agency-tag-accent {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #E81C17;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.minimal-channels {
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+/* --- FORMULARIO (DERECHA) --- */
+.service-illustration {
+  flex: 1;
+  width: 100%;
+}
+
+.glass-form {
+  background: #1A1A1A;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #333333;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-field-wrapper { position: relative; margin-bottom: 25px; }
+
+.form-field-wrapper input, 
+.form-field-wrapper textarea, 
+.form-field-wrapper select {
+  width: 100%;
+  padding: 15px;
+  background: #262626;
+  border: 1px solid #444444;
+  border-radius: 8px;
+  color: #FFFFFF;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.form-field-wrapper label {
+  position: absolute;
+  left: 12px;
+  top: 15px;
+  color: #888888;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Animación etiquetas (foco en rojo) */
+.form-field-wrapper input:focus + label,
+.form-field-wrapper input:not(:placeholder-shown) + label,
+.form-field-wrapper textarea:focus + label,
+.form-field-wrapper textarea:not(:placeholder-shown) + label,
+.form-field-wrapper select:focus + label,
+.form-field-wrapper select:not([value=""]) + label {
+  top: -10px;
+  font-size: 0.75rem;
+  background: #1A1A1A;
+  padding: 0 5px;
+  color: #E81C17;
+  font-weight: bold;
+}
+
+/* Botón de envío */
+.btn-earth-submit {
+  width: 100%;
+  padding: 18px;
+  border-radius: 8px;
+  background: #E81C17;
+  color: #FFFFFF;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-earth-submit:hover {
+  background: #C41814;
+  transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+  .services-section {
     flex-direction: column;
-    gap: 16px;
-  }
-  
-  .channel-link-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .channel-bullet {
-    width: 6px;
-    height: 6px;
-    background-color: #bc9676;
-    border-radius: 50%;
-  }
-  
-  .channel-link-item p {
-    margin: 0;
-    font-weight: 500;
-    color: #3b312a;
-  }
-  
-  /* Columna del Formulario Integrado (Sin tarjetas encimadas) */
-  .contact-form-side {
-    width: 100%;
-  }
-  
-  .form-field-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-  
-  .form-field-wrapper label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #4a3b32;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  
-  .form-field-wrapper input,
-  .form-field-wrapper select,
-  .form-field-wrapper textarea {
-    width: 100%;
-    padding: 14px 16px;
-    background-color: #ffffff; /* Inputs limpios e higiénicos sobre el fondo almendrado */
-    border: 1px solid #dcd3c9;
-    border-radius: 4px; /* Bordes sutiles y profesionales */
-    font-size: 1rem;
-    color: #3b312a;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  
-  .form-field-wrapper input:focus,
-  .form-field-wrapper select:focus,
-  .form-field-wrapper textarea:focus {
-    outline: none;
-    border-color: #bc9676;
-    box-shadow: 0 0 0 3px rgba(188, 150, 118, 0.15);
-  }
-  
-  /* Botón Sólido de Tono Tierra */
-  .btn-earth-submit {
-    width: 100%;
-    padding: 16px;
-    background-color: #3b312a; /* Botón robusto tierra */
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .btn-earth-submit:hover:not(:disabled) {
-    background-color: #52443a;
-  }
-  
-  .btn-earth-submit:disabled {
-    background-color: #c2b9b0;
-    cursor: not-allowed;
-  }
-  
-  /* Estado de éxito lineal */
-  .success-linear-state {
-    padding: 40px 0;
     text-align: center;
+    padding: 60px 8%;
   }
   
-  .success-linear-state h3 {
-    color: #3b312a;
-    margin-bottom: 12px;
-  }
+  .contact-main-heading { font-size: 2.5rem !important; }
   
-  .success-linear-state p {
-    color: #6e5d53;
-    margin-bottom: 20px;
+  .glass-form { 
+    max-width: 100%; 
+    padding: 30px;
   }
-  
-  .btn-text-revert {
-    background: none;
-    border: none;
-    color: #bc9676;
-    font-weight: 600;
-    text-decoration: underline;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-  }
+}
