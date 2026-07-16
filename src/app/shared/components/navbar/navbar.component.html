@@ -1,12 +1,20 @@
-<nav class="glass-panel navbar-container">
-  <!-- Aquí va el logo y los enlaces de tu navbar -->
+<nav class=" navbar-container">
   <div class="logo">
     <img src="whitelogoecaia.svg" alt="PixelView">
   </div>
-  <div class="nav-links">
-    <a href="#">Inicio</a>
-    <a href="#">Servicios</a>
-    <a href="#">Proceso</a>
-    <a href="#">Contacto</a>
+  
+  <!-- Usamos (click) de Angular -->
+  <button class="menu-toggle" (click)="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <!-- Usamos [class.active] para enlazar el estado -->
+  <div class="nav-links" [class.active]="isMenuOpen">
+    <a href="#" (click)="toggleMenu()">Inicio</a>
+    <a href="#" (click)="toggleMenu()">Servicios</a>
+    <a href="#" (click)="toggleMenu()">Proceso</a>
+    <a href="#" (click)="toggleMenu()">Contacto</a>
   </div>
 </nav>

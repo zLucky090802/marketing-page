@@ -1,91 +1,162 @@
-.navbar {
+/* --- CONFIGURACIÓN GLOBAL --- */
+html, body {
+  overflow-x: hidden;
   width: 100%;
-  height: 90px;
-  background-color: #FBFBFB !important;
-  display: flex;
-  align-items: center;
-  padding: 0 8%;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 2px solid #1A1A1A; /* Estilo pixel técnico */
+  margin: 0;
+  padding: 0;
+  background-color: #111111;
 }
 
-.navbar-container {
-  /* Posicionamiento para que siempre esté arriba */
-  position: absolute;
-  top: 0;
-  z-index: 1000;
-  width: 90%;
-  /* Ajuste de diseño interno del navbar */
-  display: flex;
+:root {
+  --color-bg: #111111;
+  --color-text: #F5F1EA;
+  --color-brand-red: #E81C17;
+}
+
+/* --- NAVBAR: ELIMINACIÓN AGRESIVA DE BACKGROUND --- */
+.navbar, .navbar-container {
+  width: 100% !important;
+  height: 90px !important;
+  background: none !important;      /* Forzado a nada */
+  background-color: transparent !important; /* Forzado a transparente */
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 8% !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1000 !important;
+  border: none !important;
   justify-content: space-between;
-  align-items: center;
-
-}
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 40px;
-}
-.logo img{
-  width: 100px;
-}
-
-.logo{
-  margin-left: 75px;
-}
-.nav-menu a {
-  font-family: 'VT323', monospace;
-  font-size: 1.5rem;
-  color: #1A1A1A;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.nav-links{
-  display: flex;
-  gap: 20px;
   
 }
-.nav-links a{
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  font-family: 'poppins';
-}
 
-.nav-links a:hover{
-  color: #E81C17;
-  border-bottom: 1px solid #E81C17;
+.logo img { width: 100px; display: block; }
+
+/* --- NAVEGACIÓN --- */
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { 
+  text-decoration: none; 
+  font-weight: bold; 
+  color: white !important; 
+  font-family: 'Poppins', sans-serif; 
 }
-/* --- ESTILO MOBILE --- */
+.nav-links a:hover { color: var(--color-brand-red) !important; border-bottom: 1px solid var(--color-brand-red); }
+
+/* --- MENÚ LATERAL (SLIDE-IN) --- */
 .menu-toggle {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 1001;
+  margin-right: 40px;
 }
-
-.bar { display: block; width: 25px; height: 3px; background: #1A1A1A; margin: 5px 0; }
+.bar { display: block; width: 25px; height: 3px; background: white; margin: 5px 0; }
 
 @media (max-width: 768px) {
   .menu-toggle { display: block; }
-  
-  .nav-menu {
-    display: none;
+  .nav-links {
+    display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width: 100%;
-    background: #FBFBFB;
-    padding: 20px;
-    border-bottom: 4px solid #1A1A1A;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: #111; /* Este es el fondo DEL MENÚ, no del navbar */
+    padding: 100px 40px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
   }
-  
-  .nav-menu.active { display: flex; }
-  .logo{
-    margin: 0;
+  .nav-links.active { right: 0; }
+}
+
+/* --- HERO SECTION --- */
+.hero-split {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/darkbackgroundimage.png');
+  background-size: cover;
+  background-position: center right;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+.hero-split::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.container { 
+  position: relative; 
+  z-index: 2; 
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+
+.hero-content { flex: 1; max-width: 600px; text-align: left; }
+
+.pixel-font { 
+  font-family: 'VT323', monospace !important; 
+  text-transform: uppercase; 
+  font-size: 6rem !important; 
+  line-height: 0.9; 
+  color: #FFFFFF !important; 
+  margin-bottom: 30px; 
+}
+
+.hero-subtitle { 
+  font-family: 'Poppins', sans-serif; 
+  font-size: 1.2rem; 
+  line-height: 1.6; 
+  color: #AAAAAA; 
+  margin-bottom: 40px; 
+}
+
+/* --- BOTÓN --- */
+.btn-primary {
+  font-family: 'Satoshi', sans-serif !important;
+  font-size: 1.5rem !important;
+  padding: 20px 40px !important;
+  background-color: transparent !important;
+  color: #FFFFFF !important;
+  border: 2px solid #E6392B !important;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
+}
+.btn-primary:hover { background-color: #E6392B !important; color: #FFFFFF !important; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 430px) {
+  .hero-background {
+    background-attachment: scroll !important;
+    background-position: center center !important;
   }
+  .hero-split { padding: 20px 20px !important; }
+  .pixel-font { font-size: 3rem !important; line-height: 1 !important; margin-bottom: 20px !important; }
+  .hero-subtitle { font-size: 1.1rem !important; line-height: 1.5 !important; margin-bottom: 30px !important; }
+  .btn-primary { font-size: 1.2rem !important; padding: 15px 30px !important; width: 100% !important; }
 }

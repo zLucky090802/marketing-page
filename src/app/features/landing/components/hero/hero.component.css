@@ -1,66 +1,73 @@
 /* --- CONFIGURACIÓN GLOBAL --- */
-html { 
-  scroll-behavior: smooth; 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #111111;
 }
 
-/* --- VARIABLES DE COLOR --- */
+/* --- VARIABLES --- */
 :root {
   --color-bg: #111111;
   --color-text: #F5F1EA;
   --color-brand-red: #E81C17;
 }
 
-/* --- ESTILOS GENERALES Y TIPOGRAFÍA --- */
-p {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-}
+/* --- ESTILOS GENERALES --- */
+p { font-family: 'Poppins', sans-serif; line-height: 1.6; }
 
-/* --- NAVBAR (Alineado con Hero) --- */
+/* Agrega esto al principio de tu CSS */
+.glass-panel.main-container {
+  background: transparent !important;
+  width: 100% !important;
+  overflow-x: hidden !important; /* Esto evita el desplazamiento horizontal */
+}
+/* --- NAVBAR --- */
 .navbar {
-  width: 100%;
-  height: 90px;
-  background-color: #FBFBFB !important;
-  display: flex;
-  justify-content: center;
-  padding: 0 8%;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 2px solid #1A1A1A;
-  box-sizing: border-box;
+  width: 100% !important;
+  height: 90px !important;
+  background: transparent !important; /* Forzado a transparente */
+  display: flex !important;
+  justify-content: center !important;
+  padding: 0 8% !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  border-bottom: none !important; /* Eliminamos el borde que podría verse como franja */
+  position: fixed !important;
 }
-
 .navbar-container {
   width: 100%;
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
-  margin: 0;
 }
 
 .logo img { width: 100px; display: block; }
-.nav-menu { display: flex; list-style: none; gap: 40px; }
-.nav-menu a { font-family: 'VT323', monospace; font-size: 1.5rem; color: #1A1A1A; text-decoration: none; text-transform: uppercase; }
-.nav-links { display: flex; gap: 20px; }
-.nav-links a { text-decoration: none; font-weight: bold; color: #1A1A1A; font-family: 'Poppins', sans-serif; }
-.nav-links a:hover { color: #E81C17; border-bottom: 1px solid #E81C17; }
 
-/* --- HERO DARK STYLE --- */
+/* --- HERO SECTION --- */
 .hero-split {
   position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-left: 8%;
-  padding-right: 8%;
+  padding: 0 8%;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('/darkbackgroundimage.png');
   background-size: cover;
-  background-position: center right; 
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
+  background-position: center right;
+  background-attachment: fixed;
+  z-index: 0;
 }
 
 .hero-split::before {
@@ -71,58 +78,92 @@ p {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 0;
+  z-index: 1;
 }
 
-.container { position: relative; z-index: 1; width: 100%; max-width: 1200px; margin: 0; }
+.container { 
+  position: relative; 
+  z-index: 2; 
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+
 .hero-content { flex: 1; max-width: 600px; text-align: left; }
-.pixel-font { font-family: 'VT323', monospace !important; text-transform: uppercase; font-size: 6rem !important; line-height: 0.9; color: #FFFFFF !important; margin-bottom: 30px; }
-.hero-subtitle { font-family: 'Poppins', sans-serif; font-size: 1.2rem; line-height: 1.4; color: #AAAAAA; margin-bottom: 40px; }
 
-/* --- FLECHA DE SCROLL (Corregida: Doble y Grande) --- */
-.scroll-down {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  cursor: pointer;
-  text-decoration: none;
-  font-family: monospace;
-  font-size: 3rem; /* Aumentado para que se vea bien */
-  color: #FFFFFF;
-  line-height: 0.5; /* Junta las dos flechas */
-  animation: bounce-soft 2s infinite;
+.pixel-font { 
+  font-family: 'VT323', monospace !important; 
+  text-transform: uppercase; 
+  font-size: 6rem !important; 
+  line-height: 0.9; 
+  color: #FFFFFF !important; 
+  margin-bottom: 30px; 
 }
 
-@keyframes bounce-soft {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-  40% { transform: translateY(-15px) translateX(-50%); }
-  60% { transform: translateY(-7px) translateX(-50%); }
+.hero-subtitle { 
+  font-family: 'Poppins', sans-serif; 
+  font-size: 1.2rem; 
+  line-height: 1.6; 
+  color: #AAAAAA; 
+  margin-bottom: 40px; 
 }
 
-/* --- BOTÓN MINIMALISTA --- */
+/* --- BOTÓN MINIMALISTA (ESTILO PRESERVADO) --- */
 .btn-primary {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 1.5rem;
-  padding: 20px 40px;
-  background-color: transparent;
-  color: #FFFFFF;
-  border: 2px solid #E6392B;
+  font-family: 'Satoshi', sans-serif !important;
+  font-size: 1.5rem !important;
+  padding: 20px 40px !important;
+  background-color: transparent !important;
+  color: #FFFFFF !important;
+  border: 2px solid #E6392B !important;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
 }
 
-.btn-primary:hover { background-color: #E6392B; color: #FFFFFF; border-color: #E6392B; }
-
-/* --- SECCIÓN ABOUT --- */
-.about-section { background: var(--color-bg); color: var(--color-text); padding: 100px 8%; font-family: 'Satoshi', sans-serif; }
-.about-block { margin-bottom: 80px; }
-.section-title { font-family: 'Space Grotesk', sans-serif; color: var(--color-brand-red); margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 2px; }
+.btn-primary:hover { 
+  background-color: #E6392B !important; 
+  color: #FFFFFF !important; 
+}
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  .hero-split { padding: 40px 8%; text-align: center; }
-  .pixel-font { font-size: 3.5rem !important; }
+  .nav-menu, .nav-links { display: none !important; }
+  .navbar { height: 70px; padding: 0 15px; }
+}
+
+@media (max-width: 430px) {
+  .hero-background {
+    background-attachment: scroll !important;
+    background-position: center center !important;
+  }
+  
+  .hero-split { padding: 20px 20px !important; }
+  
+  .pixel-font { 
+    font-size: 3rem !important; 
+    line-height: 1 !important; 
+    margin-bottom: 20px !important;
+  }
+  
+  .hero-subtitle { 
+    font-size: 1.1rem !important; 
+    line-height: 1.5 !important; 
+    margin-bottom: 30px !important;
+  }
+
+  /* Ajuste botón móvil */
+  .btn-primary {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-background {
+    background-size: cover; 
+    background-position: 150% center; /* Ajusta este porcentaje (ej. 50%, 60%, 70%) para mover el foco de la imagen lateralmente sin dejar espacio vacío */
+  }
 }

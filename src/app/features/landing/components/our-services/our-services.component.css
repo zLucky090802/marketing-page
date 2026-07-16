@@ -107,10 +107,31 @@ body { margin: 0; padding: 0; background-color: var(--color-bg); }
 
 /* --- SECCIÓN SERVICIOS DARK --- */
 .services-section { padding: 100px 8%; background-color: var(--color-bg); color: var(--color-text); }
-.section-title-red { font-family: 'Space Grotesk', sans-serif; color: #E81C17; font-size: 2.5rem; text-align: center; margin-bottom: 60px; letter-spacing: 3px; text-transform: uppercase; }
+.section-title-red { 
+  font-family: 'Space Grotesk', sans-serif; 
+  color: #E81C17; 
+  font-size: 2.5rem; 
+  text-align: center; 
+  margin-bottom: 60px; 
+  letter-spacing: 3px; 
+  text-transform: uppercase; 
+}
 
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
-.service-card { border: 1px solid #333333; padding: 50px; transition: all 0.4s ease; background: rgba(255, 255, 255, 0.02); }
+.services-grid { 
+  display: grid; 
+  /* Cambiamos el minmax para que en móviles sea 100% del ancho disponible */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 20px; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 5%;
+}
+.service-card { 
+  border: 1px solid #333333; 
+  padding: 40px; 
+  transition: all 0.4s ease; 
+  background: rgba(255, 255, 255, 0.02); 
+}
 .service-card:hover { border-color: #E81C17; transform: translateY(-10px); }
 
 .card-number { font-family: 'VT323', monospace; font-size: 3rem; color: #E81C17; display: block; margin-bottom: 20px; }
@@ -125,6 +146,25 @@ body { margin: 0; padding: 0; background-color: var(--color-bg); }
 @media (max-width: 768px) {
   .hero-split { padding: 40px 8%; text-align: center; }
   .pixel-font { font-size: 3.5rem !important; }
-  .services-grid { grid-template-columns: 1fr; }
-  .service-card { padding: 30px; }
+  
+
+  .section-title-red { 
+    font-size: 1.8rem; 
+    margin-bottom: 40px; 
+    letter-spacing: 1px;
+  }
+
+  /* Tarjetas ocupan todo el ancho */
+  .services-grid { 
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .service-card { 
+    padding: 25px; 
+  }
+
+  .service-card h3 { 
+    font-size: 2rem; 
+  }
 }

@@ -75,8 +75,63 @@
 .pillar p { line-height: 1.5; }
 
 /* --- RESPONSIVE --- */
+/* --- RESPONSIVE PARA ABOUT SECTION --- */
 @media (max-width: 768px) {
-  .pillars-grid { grid-template-columns: 1fr; }
-  .name-grid { flex-wrap: wrap; gap: 20px; }
-  .values-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  /* Ajuste general de la sección */
+  .about-section { 
+    padding: 60px 5% !important; 
+  }
+
+  /* El nombre: Centrar contenido en pantallas medianas */
+  .name-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+    text-align: center; 
+  }
+
+  /* Valores: Ajuste a 3 columnas para tablet */
+  .values-container { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+  }
+
+  /* Pilares: Una sola columna para que no se vean apretados */
+  .pillars-grid { 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustes para móviles pequeños */
+  
+  /* Nombre: 1 columna para evitar desbordamiento */
+  .name-grid { 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+  }
+
+  /* Valores: 1 columna (o 2 si prefieres, pero 1 es más limpio) */
+  .values-container { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+  }
+
+  /* Títulos: Reducir tamaño para evitar saltos de línea forzados */
+  .section-title { 
+    font-size: 1.2rem !important; 
+    letter-spacing: 1px; 
+  }
+
+  /* Pilares: Padding reducido para ahorrar espacio */
+  .pillar { 
+    padding: 25px 15px; 
+  }
+  
+  .pillar-icon {
+    width: 50px;
+    height: 50px;
+  }
 }
