@@ -144,27 +144,41 @@ body { margin: 0; padding: 0; background-color: var(--color-bg); }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  .hero-split { padding: 40px 8%; text-align: center; }
-  .pixel-font { font-size: 3.5rem !important; }
+  /* Ajustes del Hero */
+  .hero-split { padding: 40px 5%; text-align: center; }
+  .pixel-font { font-size: 3.5rem !important; line-height: 1 !important; }
   
-
+  /* Ajustes de Servicios */
+  .services-section { padding: 60px 5%; } /* Reducimos padding lateral en móvil */
+  
   .section-title-red { 
-    font-size: 1.8rem; 
-    margin-bottom: 40px; 
+    font-size: 1.6rem !important; 
+    margin-bottom: 30px; 
     letter-spacing: 1px;
   }
 
-  /* Tarjetas ocupan todo el ancho */
   .services-grid { 
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr; /* Una sola columna para las tarjetas */
     gap: 20px;
+    padding: 0; /* Eliminamos el padding extra para aprovechar el ancho */
   }
 
   .service-card { 
     padding: 25px; 
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
   }
 
   .service-card h3 { 
-    font-size: 2rem; 
+    font-size: 1.8rem !important; /* Ajuste para evitar que el título sea muy largo */
+    margin-bottom: 15px; 
+  }
+
+  .service-card p { 
+    font-size: 1rem; /* Texto de párrafo más pequeño en móvil */
+  }
+
+  .service-list-dark li { 
+    font-size: 0.9rem; /* Lista de servicios ligeramente más compacta */
   }
 }

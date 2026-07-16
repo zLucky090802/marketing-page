@@ -11,15 +11,49 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Incluye padding y border en el ancho total */
+  max-width: 100%;
 }
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
+/* --- IMPORTACIÓN DE FUENTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
 
-body {
+/* --- APLICACIÓN GLOBAL SIN TOCAR CLASES --- */
+
+/* 1. Fuente base para todo el sitio (Satoshi) */
+body, html {
+  font-family: 'Satoshi', sans-serif !important;
   background-color: var(--bg-color); /* Fondo negro para toda la app */
   color: var(--text-main);
   font-family: var(--font-body);
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  overflow-x: hidden; /* Corta cualquier cosa que se salga horizontalmente */
+  width: 100%;
+}
+
+/* 2. Aplicar Space Grotesk automáticamente a todos los niveles de títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif !important;
+  text-transform: uppercase !important; /* Siguiendo la guía de tu infografía */
+}
+
+/* 3. Asegurar que los párrafos mantengan Satoshi */
+p {
+  font-family: 'Satoshi', sans-serif !important;
+}
+
+/* 4. Asegurar que botones y enlaces también sigan la regla de textos */
+button, a, input, textarea {
+  font-family: 'Satoshi', sans-serif !important;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Contenedor principal que envuelve todo */

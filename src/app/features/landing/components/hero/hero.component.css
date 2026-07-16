@@ -92,9 +92,9 @@ p { font-family: 'Poppins', sans-serif; line-height: 1.6; }
 .hero-content { flex: 1; max-width: 600px; text-align: left; }
 
 .pixel-font { 
-  font-family: 'VT323', monospace !important; 
+
   text-transform: uppercase; 
-  font-size: 6rem !important; 
+  font-size: 4.5rem !important; 
   line-height: 0.9; 
   color: #FFFFFF !important; 
   margin-bottom: 30px; 
