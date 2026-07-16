@@ -41,7 +41,10 @@ html, body {
   color: white !important; 
   font-family: 'Poppins', sans-serif; 
 }
-.nav-links a:hover { color: var(--color-brand-red) !important; border-bottom: 1px solid var(--color-brand-red); }
+.nav-links a:hover { 
+  color: #E81C17 !important; 
+  border-bottom: 1px solid #E81C17;
+ }
 
 /* --- MENÚ LATERAL (SLIDE-IN) --- */
 .menu-toggle {
