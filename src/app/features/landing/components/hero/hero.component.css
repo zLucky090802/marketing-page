@@ -13,7 +13,9 @@ html, body {
   --color-text: #F5F1EA;
   --color-brand-red: #E81C17;
 }
-
+#red-title{
+  color: #E81C17;
+}
 /* --- ESTILOS GENERALES --- */
 p { font-family: 'Poppins', sans-serif; line-height: 1.6; }
 
