@@ -93,14 +93,14 @@ p { font-family: 'Poppins', sans-serif; line-height: 1.6; }
 
 .hero-content { flex: 1; max-width: 600px; text-align: left; }
 
-.pixel-font { 
-
-  text-transform: uppercase; 
-  font-size: 4.5rem !important; 
-  line-height: 0.9; 
-  color: #FFFFFF ; 
-  margin-bottom: 30px; 
+.pixel-font {  
+  text-transform: uppercase;  
+  font-size: 4.5rem !important;  
+  line-height: 1.1 !important; /* Ajustado para que respire la parte superior y no se corte */
+  color: #FFFFFF;  
+  margin-bottom: 30px;  
   max-width: 600px;
+  display: block; /* Asegura que se comporte correctamente como un bloque independiente */
 }
 
 .hero-subtitle { 
