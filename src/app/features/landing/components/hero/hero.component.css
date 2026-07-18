@@ -13,8 +13,9 @@ html, body {
   --color-text: #F5F1EA;
   --color-brand-red: #E81C17;
 }
-#red-title{
+#red-title {
   color: #E81C17;
+  display: inline-block; /* Opcional: si quieres que "HACEN CRECER" baje a otra línea automáticamente, usa display: block; */
 }
 /* --- ESTILOS GENERALES --- */
 p { font-family: 'Poppins', sans-serif; line-height: 1.6; }
@@ -89,18 +90,18 @@ p { font-family: 'Poppins', sans-serif; line-height: 1.6; }
   width: 100%; 
   max-width: 1200px; 
   margin: 0 auto;
+  margin-top: 20px;
 }
 
 .hero-content { flex: 1; max-width: 600px; text-align: left; }
 
 .pixel-font {  
   text-transform: uppercase;  
-  font-size: 4.5rem !important;  
-  line-height: 1.1 !important; /* Ajustado para que respire la parte superior y no se corte */
+  font-size: 3.8rem !important; /* Bajamos un poco de 4.5rem a 3.8rem para que respire mejor */
+  line-height: 1.1 !important;  /* Corregido el 0.9 anterior para que no se corte por arriba */
   color: #FFFFFF;  
   margin-bottom: 30px;  
   max-width: 600px;
-  display: block; /* Asegura que se comporte correctamente como un bloque independiente */
 }
 
 .hero-subtitle { 
