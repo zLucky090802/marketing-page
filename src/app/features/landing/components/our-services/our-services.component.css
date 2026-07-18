@@ -106,7 +106,7 @@ body { margin: 0; padding: 0; background-color: var(--color-bg); }
 .btn-primary:hover { background-color: #E81C17; color: #FFFFFF; }
 
 /* --- SECCIÓN SERVICIOS DARK --- */
-.services-section { padding: 100px 8%; background-color: var(--color-bg); color: var(--color-text); }
+.services-section { padding: 100px 8%; background-color: black; color: var(--color-text); }
 .section-title-red { 
   font-family: 'Space Grotesk', sans-serif; 
   color: #E81C17; 
