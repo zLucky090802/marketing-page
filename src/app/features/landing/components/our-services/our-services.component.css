@@ -2,7 +2,7 @@
 html { scroll-behavior: smooth; }
 
 :root {
-  --color-bg: #111111;
+  --color-bg: black;
   --color-text: #F5F1EA;
   --color-brand-red: #E81C17;
 }
