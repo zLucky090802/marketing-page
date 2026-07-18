@@ -1,6 +1,6 @@
 /* --- CONFIGURACIÓN GLOBAL DARK MINIMALIST --- */
 :root {
-  --bg-color: #111111;       /* Negro Profundo */
+  --bg-color: black;       /* Negro Profundo */
   --text-main: #FFFFFF;      /* Blanco Puro */
   --accent-gold: #D4AF37;    /* Dorado de marca */
   --font-heading: 'VT323', monospace;
