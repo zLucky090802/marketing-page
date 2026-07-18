@@ -134,7 +134,7 @@ body { margin: 0; padding: 0; background-color: var(--color-bg); }
 }
 .service-card:hover { border-color: #E81C17; transform: translateY(-10px); }
 
-.card-number {font-size: 2rem; color: #E81C17; display: block; margin-bottom: 20px; }
+.card-number {font-size: 1rem; color: #E81C17; display: block; margin-bottom: 20px; }
 .service-card h3 { font-family: 'VT323', monospace; font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
 .service-card p { font-family: 'Poppins', sans-serif; font-size: 1.1rem; color: #AAAAAA; margin-bottom: 30px; }
 
