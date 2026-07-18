@@ -1,7 +1,7 @@
 /* --- SECCIÓN CONTACTO (DARK) --- */
 .services-section {
   padding: 100px 8%;
-  background-color: #111111;
+  background-color: black;
   display: flex;
   flex-direction: row; /* Alineación horizontal en desktop */
   justify-content: center;
