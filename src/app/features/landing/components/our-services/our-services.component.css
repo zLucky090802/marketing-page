@@ -1,112 +1,12 @@
-/* --- CONFIGURACIÓN GLOBAL --- */
-html { scroll-behavior: smooth; }
-
-:root {
-  --color-bg: black;
-  --color-text: #F5F1EA;
-  --color-brand-red: #E81C17;
-}
-
-body { margin: 0; padding: 0; background-color: var(--color-bg); }
-
-/* --- NAVBAR (Alineado con Hero) --- */
-.navbar {
-  width: 100%;
-  height: 90px;
-  background-color: #FBFBFB !important;
-  display: flex;
-  justify-content: center;
-  padding: 0 8%;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 2px solid #1A1A1A;
+/* --- SECCIÓN SERVICIOS / SISTEMAS DARK --- */
+.services-section { 
+  padding: 100px 4%; 
+  background-color: var(--color-bg); 
+  color: var(--color-text); 
   box-sizing: border-box;
-}
-
-.navbar-container {
   width: 100%;
-  max-width: 1200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.logo img { width: 100px; display: block; }
-.nav-menu { display: flex; list-style: none; gap: 40px; }
-.nav-menu a { font-family: 'VT323', monospace; font-size: 1.5rem; color: #1A1A1A; text-decoration: none; text-transform: uppercase; }
-.nav-links { display: flex; gap: 20px; }
-.nav-links a { text-decoration: none; font-weight: bold; color: #1A1A1A; font-family: 'Poppins', sans-serif; }
-.nav-links a:hover { color:#E81C17; border-bottom: 1px solid #E81C17; }
-
-/* --- HERO DARK STYLE --- */
-.hero-split {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 0 8%;
-  background-image: url('/darkbackgroundimage.png');
-  background-size: cover;
-  background-position: center right; 
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-}
-
-.hero-split::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 0;
-}
-
-.container { position: relative; z-index: 1; width: 100%; max-width: 1200px; margin: 0; }
-.hero-content { flex: 1; max-width: 600px; text-align: left; }
-.pixel-font { font-family: 'VT323', monospace !important; text-transform: uppercase; font-size: 6rem !important; line-height: 0.9; color: #FFFFFF !important; margin-bottom: 30px; }
-.hero-subtitle { font-family: 'Poppins', sans-serif; font-size: 1.2rem; line-height: 1.4; color: #AAAAAA; margin-bottom: 40px; }
-
-/* --- FLECHA SCROLL (Centrada y Doble) --- */
-.scroll-down {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  cursor: pointer;
-  text-decoration: none;
-  font-family: monospace;
-  font-size: 3rem;
-  color: #FFFFFF;
-  line-height: 0.5;
-  animation: bounce-soft 2s infinite;
-}
-
-@keyframes bounce-soft {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-  40% { transform: translateY(-15px) translateX(-50%); }
-  60% { transform: translateY(-7px) translateX(-50%); }
-}
-
-/* --- BOTÓN --- */
-.btn-primary {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 1.5rem;
-  padding: 20px 40px;
-  background-color: transparent;
-  color: #FFFFFF;
-  border: 2px solid #E81C17;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-}
-.btn-primary:hover { background-color: #E81C17; color: #FFFFFF; }
-
-/* --- SECCIÓN SERVICIOS DARK --- */
-.services-section { padding: 100px 8%; background-color: black; color: var(--color-text); }
 .section-title-red { 
   font-family: 'Space Grotesk', sans-serif; 
   color: #E81C17; 
@@ -119,37 +19,88 @@ body { margin: 0; padding: 0; background-color: var(--color-bg); }
 
 .services-grid { 
   display: grid; 
-  /* Cambiamos el minmax para que en móviles sea 100% del ancho disponible */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-  gap: 20px; 
-  max-width: 1200px; 
+  /* Forzamos 4 columnas en escritorios asegurando que entren en pantallas estándar */
+  grid-template-columns: repeat(4, minmax(0, 1fr)); 
+  gap: 16px; 
+  max-width: 1400px; 
   margin: 0 auto; 
-  padding: 0 5%;
+  padding: 0 2%;
+  box-sizing: border-box;
 }
+
 .service-card { 
   border: 1px solid #333333; 
-  padding: 40px; 
+  padding: 30px 20px; 
   transition: all 0.4s ease; 
   background: rgba(255, 255, 255, 0.02); 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
-.service-card:hover { border-color: #E81C17; transform: translateY(-10px); }
 
-.card-number {font-size: 1rem; color: #E81C17; display: block; margin-bottom: 20px; }
-.service-card h3 { font-family: 'VT323', monospace; font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
-.service-card p { font-family: 'Poppins', sans-serif; font-size: 1.1rem; color: #AAAAAA; margin-bottom: 30px; }
+.service-card:hover { 
+  border-color: #E81C17; 
+  transform: translateY(-10px); 
+}
 
-.service-list-dark { list-style: none; padding: 0; }
-.service-list-dark li { font-family: 'Poppins', sans-serif; margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 1rem; }
-.service-list-dark li::before { content: "✦"; position: absolute; left: 0; color: #E81C17; }
+.card-number { 
+
+  font-size: 1.5rem; 
+  color: #E81C17; 
+  display: block; 
+  margin-bottom: 15px; 
+}
+
+.service-card h3 { 
+ 
+  /* Reducimos ligeramente a 2.1rem para que títulos largos como "SISTEMA DE AUTOMATIZACIÓN" quepan sin salirse */
+  font-size: 2.1rem; 
+  line-height: 1.1;
+  margin-bottom: 20px; 
+  text-transform: uppercase;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.service-card p { 
+  font-family: 'Poppins', sans-serif; 
+  font-size: 1rem; 
+  color: #AAAAAA; 
+  margin-bottom: 25px; 
+  flex-grow: 1;
+}
+
+.service-list-dark { 
+  list-style: none; 
+  padding: 0; 
+  margin: 0;
+}
+
+.service-list-dark li { 
+  font-family: 'Poppins', sans-serif; 
+  margin-bottom: 12px; 
+  padding-left: 22px; 
+  position: relative; 
+  font-size: 0.9rem; 
+}
+
+.service-list-dark li::before { 
+  content: "✦"; 
+  position: absolute; 
+  left: 0; 
+  color: #E81C17; 
+}
 
 /* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .services-grid { 
+    /* En pantallas medianas o tablets grandes bajamos a 2 columnas */
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
 @media (max-width: 768px) {
-  /* Ajustes del Hero */
-  .hero-split { padding: 40px 5%; text-align: center; }
-  .pixel-font { font-size: 3.5rem !important; line-height: 1 !important; }
-  
-  /* Ajustes de Servicios */
-  .services-section { padding: 60px 5%; } /* Reducimos padding lateral en móvil */
+  .services-section { padding: 60px 5%; } 
   
   .section-title-red { 
     font-size: 1.6rem !important; 
@@ -158,27 +109,26 @@ body { margin: 0; padding: 0; background-color: var(--color-bg); }
   }
 
   .services-grid { 
-    grid-template-columns: 1fr; /* Una sola columna para las tarjetas */
+    grid-template-columns: 1fr; /* Una sola columna para móviles */
     gap: 20px;
-    padding: 0; /* Eliminamos el padding extra para aprovechar el ancho */
+    padding: 0; 
   }
 
   .service-card { 
     padding: 25px; 
     width: 100%;
-    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
   }
 
   .service-card h3 { 
-    font-size: 1.8rem !important; /* Ajuste para evitar que el título sea muy largo */
+    font-size: 1.8rem !important; 
     margin-bottom: 15px; 
   }
 
   .service-card p { 
-    font-size: 1rem; /* Texto de párrafo más pequeño en móvil */
+    font-size: 1rem; 
   }
 
   .service-list-dark li { 
-    font-size: 0.9rem; /* Lista de servicios ligeramente más compacta */
+    font-size: 0.9rem; 
   }
 }
