@@ -18,22 +18,34 @@
     <div class="service-illustration">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit($event)" *ngIf="!submitSuccess()" class="glass-form">
 
+        <!-- Campo Nombre -->
         <div class="form-field-wrapper">
           <input type="text" id="nombre" formControlName="nombre" placeholder=" ">
           <label for="nombre">Nombre completo</label>
+          <small class="error-message" *ngIf="contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched">
+            El nombre es requerido (mínimo 2 caracteres).
+          </small>
         </div>
 
+        <!-- Campo Email -->
         <div class="form-field-wrapper">
           <input type="email" id="email" formControlName="email" placeholder=" ">
           <label for="email">Correo electrónico</label>
+          <small class="error-message" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+            Ingresa un correo electrónico válido.
+          </small>
         </div>
 
-        <!-- Campo Empresa añadido para mantener coherencia con el FormGroup -->
+        <!-- Campo Empresa -->
         <div class="form-field-wrapper">
           <input type="text" id="empresa" formControlName="empresa" placeholder=" ">
           <label for="empresa">Empresa</label>
+          <small class="error-message" *ngIf="contactForm.get('empresa')?.invalid && contactForm.get('empresa')?.touched">
+            El campo empresa es requerido.
+          </small>
         </div>
 
+        <!-- Campo Servicio -->
         <div class="form-field-wrapper">
           <select id="servicio" formControlName="servicio">
             <option value="" disabled selected></option>
@@ -41,14 +53,22 @@
             <option value="tech">Tecnología & Automatización</option>
           </select>
           <label for="servicio" class="floating-label">¿Qué solución necesitas?</label>
+          <small class="error-message" *ngIf="contactForm.get('servicio')?.invalid && contactForm.get('servicio')?.touched">
+            Selecciona una solución.
+          </small>
         </div>
 
+        <!-- Campo Mensaje -->
         <div class="form-field-wrapper">
           <textarea id="mensaje" formControlName="mensaje" placeholder=" " rows="4"></textarea>
           <label for="mensaje">Cuéntanos sobre tu proyecto</label>
+          <small class="error-message" *ngIf="contactForm.get('mensaje')?.invalid && contactForm.get('mensaje')?.touched">
+            El mensaje es requerido (mínimo 10 caracteres).
+          </small>
         </div>
 
-        <button type="submit" class="btn-earth-submit" [disabled]="isSubmitting() || contactForm.invalid">
+        <!-- Botón siempre activo, solo se bloquea cuando está cargando -->
+        <button type="submit" class="btn-earth-submit" [disabled]="isSubmitting()">
           {{ isSubmitting() ? 'Enviando...' : 'Iniciar Conversación' }}
         </button>
       </form>
