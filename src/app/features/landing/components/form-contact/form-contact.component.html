@@ -1,8 +1,7 @@
 <div class="container">
   <section class="services-section">
 
-
-    <!-- Lado Izquierdo: Información (Mismo ancho que el de servicios) -->
+    <!-- Lado Izquierdo: Información -->
     <div class="service-content">
       <span class="agency-tag-accent">Let's Build Together</span>
       <h2 class="contact-main-heading">Llevemos tu marca al siguiente nivel</h2>
@@ -12,29 +11,31 @@
       </p>
       <div class="minimal-channels">
         <p>ecaiainfo&#64;gmail.com</p>
-     
       </div>
     </div>
 
-    <!-- Lado Derecho: Formulario (Mismo ancho que el de servicios) -->
+    <!-- Lado Derecho: Formulario Reactivo -->
     <div class="service-illustration">
-      <form (submit)="onSubmit($event)" *ngIf="!submitSuccess()" class="glass-form">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!submitSuccess()" class="glass-form">
 
         <div class="form-field-wrapper">
-          <input type="text" id="nombre" name="nombre" placeholder=" " [ngModel]="contactModel().nombre"
-            (ngModelChange)="updateField('nombre', $event)" required>
+          <input type="text" id="nombre" formControlName="nombre" placeholder=" ">
           <label for="nombre">Nombre completo</label>
         </div>
 
         <div class="form-field-wrapper">
-          <input type="email" id="email" name="email" placeholder=" " [ngModel]="contactModel().email"
-            (ngModelChange)="updateField('email', $event)" required>
+          <input type="email" id="email" formControlName="email" placeholder=" ">
           <label for="email">Correo electrónico</label>
         </div>
 
+        <!-- Campo Empresa añadido para mantener coherencia con el FormGroup -->
         <div class="form-field-wrapper">
-          <select id="servicio" name="servicio" [ngModel]="contactModel().servicio"
-            (ngModelChange)="updateField('servicio', $event)">
+          <input type="text" id="empresa" formControlName="empresa" placeholder=" ">
+          <label for="empresa">Empresa</label>
+        </div>
+
+        <div class="form-field-wrapper">
+          <select id="servicio" formControlName="servicio">
             <option value="" disabled selected></option>
             <option value="marketing">Marketing Estratégico</option>
             <option value="tech">Tecnología & Automatización</option>
@@ -43,17 +44,15 @@
         </div>
 
         <div class="form-field-wrapper">
-          <textarea id="mensaje" name="mensaje" placeholder=" " [ngModel]="contactModel().mensaje"
-            (ngModelChange)="updateField('mensaje', $event)" rows="4" required></textarea>
+          <textarea id="mensaje" formControlName="mensaje" placeholder=" " rows="4"></textarea>
           <label for="mensaje">Cuéntanos sobre tu proyecto</label>
         </div>
 
-        <button type="submit" class="btn-earth-submit" [disabled]="isSubmitting()">
+        <button type="submit" class="btn-earth-submit" [disabled]="isSubmitting() || contactForm.invalid">
           {{ isSubmitting() ? 'Enviando...' : 'Iniciar Conversación' }}
         </button>
       </form>
     </div>
 
   </section>
-
 </div>
