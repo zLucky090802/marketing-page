@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms'; 
 import { HttpClient } from '@angular/common/http';
 
 interface ContactData {
@@ -14,7 +14,7 @@ interface ContactData {
 @Component({
   selector: 'app-form-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule,  ReactiveFormsModule],
   templateUrl: './form-contact.component.html',
   styleUrls: ['./form-contact.component.css']
 })
