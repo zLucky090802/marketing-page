@@ -16,7 +16,7 @@
 
     <!-- Lado Derecho: Formulario Reactivo -->
     <div class="service-illustration">
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!submitSuccess()" class="glass-form">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit($event)" *ngIf="!submitSuccess()" class="glass-form">
 
         <div class="form-field-wrapper">
           <input type="text" id="nombre" formControlName="nombre" placeholder=" ">
